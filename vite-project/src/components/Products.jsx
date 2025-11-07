@@ -1,28 +1,29 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/CartSlice";
 import { fetchProducts } from "../store/productSlice";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
+  // ✅ Access data and status from Redux store
+  const { data: products, status } = useSelector((state) => state.product);
 
   useEffect(() => {
-    dispatch(fetchProducts())
-    // const fetchProducts = async () => {
-    //   const res = await axios.get("https://fakestoreapi.com/products");
-    //   console.log(res.data);
-    //   setProducts(res.data);
-    // };
-    // fetchProducts();
-  }, []);
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
+  const handleAdd = (product) => {
+    dispatch(addToCart(product));
+  };
 
+  // ✅ Show loading or error messages
+  if (status === "loading") {
+    return <h2>Loading products...</h2>;
+  }
 
-  const handleAdd=(product)=>{
-        dispatch(addToCart(product))
+  if (status === "error") {
+    return <h2>Something went wrong! Please try again later.</h2>;
   }
 
   return (
