@@ -6,7 +6,7 @@ import { fetchProducts } from "../store/productSlice";
 const Products = () => {
   const dispatch = useDispatch();
 
-  // ✅ Access data and status from Redux store
+
   const { data: products, status } = useSelector((state) => state.product);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const Products = () => {
     dispatch(addToCart(product));
   };
 
-  // ✅ Show loading or error messages
+  
   if (status === "loading") {
     return <h2>Loading products...</h2>;
   }
