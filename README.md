@@ -35,12 +35,12 @@ A fully functional **Kanban-style task management system** built using **HTML, C
 
 ⚙️ Setup Instructions
 
-1️⃣ Clone the repo
+**Clone the repo**
 ```bash
 git clone https://github.com/your-username/kanban-board.git
 cd kanban-board
 
-2️⃣ Open the app
+- Open the app
   Simply run:
   index.html
 
