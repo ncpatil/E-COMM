@@ -41,11 +41,11 @@ git clone https://github.com/your-username/kanban-board.git
 cd kanban-board
 
 2️⃣ Open the app
-
-Simply run:
-index.html
+  Simply run:
+  index.html
 
 - No server setup required.
+
 
 🧩 How It Works
 
@@ -61,4 +61,5 @@ index.html
 - Drag & drop ticket movement
 - Multiple board categories
 - User authentication
+
 
